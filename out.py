@@ -7,7 +7,7 @@ from PIL import Image
 import tensorflow as tf
 from typing import Tuple
 from fastapi.middleware.cors import CORSMiddleware
-
+import os
 
 app = FastAPI()
 
@@ -23,10 +23,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL = tf.keras.models.load_model("final models/outlierrice")
+MODEL_PATH = os.path.join("..", "final models", "outlierrice")
+DISEASE_MODEL_PATH = os.path.join("..", "final models", "final2")
+
+
+MODEL = tf.keras.models.load_model(MODEL_PATH)
 CLASS_NAMES = ['No Rice', 'Rice']
 
-DISEASE_MODEL = tf.keras.models.load_model("final models/final2")
+DISEASE_MODEL = tf.keras.models.load_model(DISEASE_MODEL_PATH)
 DISEASE_CLASS_NAMES = ['Brown Spot', 'Healthy', 'Leaf Blight', 'Tungro']
 
 
