@@ -22,9 +22,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+script_directory = os.path.dirname(os.path.abspath(__file__))
 
-MODEL_PATH = os.path.join("..", "final models", "outlierrice")
-DISEASE_MODEL_PATH = os.path.join("..", "final models", "final2")
+MODEL_PATH = os.path.join(script_directory, "..", "final models", "outlierrice")
+DISEASE_MODEL_PATH = os.path.join(script_directory, "..", "final models", "final2")
 
 
 MODEL = tf.keras.models.load_model(MODEL_PATH)
