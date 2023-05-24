@@ -1,5 +1,5 @@
 fastapi==0.95.2
-numpy==1.23.5
+numpy==1.21.6
 # Pillow==9.4.0
 Pillow==9.5.0
 tensorflow==2.12.0
