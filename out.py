@@ -26,7 +26,7 @@ app.add_middleware(
 MODEL = tf.keras.models.load_model("../final models/outlierrice")
 CLASS_NAMES = ['No Rice', 'Rice']
 
-DISEASE_MODEL = tf.keras.models.load_model("../final models/final2")
+DISEASE_MODEL = tf.keras.models.load_model("/final models/final2")
 DISEASE_CLASS_NAMES = ['Brown Spot', 'Healthy', 'Leaf Blight', 'Tungro']
 
 
