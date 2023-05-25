@@ -22,16 +22,18 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-script_directory = os.path.dirname(os.path.abspath(__file__))
+# script_directory = os.path.dirname(os.path.abspath(__file__))
 
-MODEL_PATH = os.path.join(script_directory, "..", "final models", "outlierrice")
-DISEASE_MODEL_PATH = os.path.join(script_directory, "..", "final models", "final2")
+# MODEL_PATH = os.path.join(script_directory, "..", "final models", "outlierrice")
+# DISEASE_MODEL_PATH = os.path.join(script_directory, "..", "final models", "final2")
 
 
-MODEL = tf.keras.models.load_model(MODEL_PATH)
+# MODEL = tf.keras.models.load_model(MODEL_PATH)
+MODEL = tf.keras.models.load_model("https://github.com/Manish-bit/Models/tree/master/outlierrice")
 CLASS_NAMES = ['No Rice', 'Rice']
 
-DISEASE_MODEL = tf.keras.models.load_model(DISEASE_MODEL_PATH)
+# DISEASE_MODEL = tf.keras.models.load_model(DISEASE_MODEL_PATH)
+DISEASE_MODEL = tf.keras.models.load_model("https://github.com/Manish-bit/Models/tree/master/final2")
 DISEASE_CLASS_NAMES = ['Brown Spot', 'Healthy', 'Leaf Blight', 'Tungro']
 
 
